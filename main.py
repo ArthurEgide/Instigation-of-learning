@@ -1,8 +1,11 @@
-import save, mainScreen
+import os
 
 def choice():
     return int(input('>>'))
 
+try:
+    os.mkdir("saves")
+except FileExistsError:
+    print()
 
-print("Inicio da vida")
-mainScreen
+import mainScreen

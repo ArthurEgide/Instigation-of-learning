@@ -1,26 +1,34 @@
-import main
-import save
+import os
 
 def newGame():
-    print('Em breve :)')
+    import save
+    os.chdir("saves")
+    save.criar()
+
 
 def loadGame():
+    import save
+    os.chdir("saves")
     save.carregar()
+    print('Load')
 
 def options():
     print('Em breve :)')
 
 def credit():
-    print('Em breve :)')
+    print('---------')
+    print('## Em desenvolvimento ##')
+    print("\n\n Por Arthur Egide")
 
 print('-- Bem vindo ao RPG em "textes" --\n')
 
-opt = ['Iniciar novo jogo', 'Carregar Jogo', 'Opcoes', 'Detalhes'],['newGame', 'loadGame', 'optionsm', 'credits']
+opt = ['Iniciar novo jogo', 'Carregar Jogo', 'Opcoes', 'Detalhes'],['newGame', 'loadGame', 'options', 'credits']
 
 
 for ind,i in enumerate(opt[0]):
     print('-'+ str(ind) +'-', i, '--- ')
 
+import main
 choice = main.choice()
 
 if opt[1][choice] == opt[1][0]:
